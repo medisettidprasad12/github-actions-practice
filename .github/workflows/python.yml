@@ -1,4 +1,4 @@
-name: Run Python Script
+name: My First Workflow
 
 on:
   push:
@@ -18,5 +18,5 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run Python file
+      - name: My First Workflow
         run: python hello.py
