@@ -1,14 +1,16 @@
-name: My First Workflow
+name: Run Python Script
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
-  hello:
+  run-python:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -16,5 +18,5 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run Python script
+      - name: Run Python file
         run: python hello.py
