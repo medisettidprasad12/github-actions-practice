@@ -31,7 +31,6 @@ EOF
 
 
 
-cat > .github/workflows/variables.yml <<'EOF'
 name: Variables Practice
 
 on:
