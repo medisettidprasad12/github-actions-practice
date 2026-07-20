@@ -27,3 +27,34 @@ jobs:
       - name: Run tests
         run: python -m pytest
 EOF
+
+
+
+
+cat > .github/workflows/variables.yml <<'EOF'
+name: Variables Practice
+
+on:
+  workflow_dispatch:
+
+env:
+  COURSE_NAME: "GitHub Actions Practice"
+
+jobs:
+  demonstrate-variables:
+    runs-on: ubuntu-latest
+
+    env:
+      JOB_MESSAGE: "This variable belongs to the entire job"
+
+    steps:
+      - name: Display workflow and job variables
+        run: |
+          echo "Course: $COURSE_NAME"
+          echo "Job message: $JOB_MESSAGE"
+
+      - name: Display a step variable
+        env:
+          STUDENT_NAME: "GitHub Learner"
+        run: echo "Student: $STUDENT_NAME"
+EOF
